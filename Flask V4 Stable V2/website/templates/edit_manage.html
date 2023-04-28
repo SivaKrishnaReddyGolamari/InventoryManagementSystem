@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Note</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+  <div class="header">
+    <h1>Edit the list</h1>
+  </div>
+<br>
+  <form method="POST">
+    <label for="title">Item:</label>
+    <input type="text" id="title" name="title" class="form-control" value="{{ manage.title }}" required>
+    <br>
+    <label for="incoming_stock">Incoming Stock:</label>
+    <input type="number" id="incoming_stock" name="incoming_stock" class="form-control" value="{{ manage.incoming_stock }}" required>
+    <br>
+    <label for="outgoing_stock">Outgoing Stock:</label>
+    <input type="number" id="outgoing_stock" name="outgoing_stock" class="form-control" value="{{ manage.outgoing_stock }}" required>
+    <br>
+    <div class="center">
+      <button type="submit" class="button">Save Changes</button>
+    </div>
+  </form>
+</body>
+</html>

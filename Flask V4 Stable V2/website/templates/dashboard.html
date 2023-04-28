@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+</head>
+<body>
+  <div class="header">
+    <h1>Dashboard</h1>
+    <a href="/logout" id="logout" class="logout">Logout</a>
+  </div>
+
+<p>Welcome {{ user.Full_Name }} </p>
+{% with messages = get_flashed_messages(with_categories=true) %} 
+{% if messages %} 
+  {% for category, message in messages %} 
+      {% if category == 'errors' %}
+        <div class="popup">
+          <div class="popup-content">
+            <span class="close">&times;</span>
+            <p class="red">{{ message }}</p>
+          </div>
+        </div>
+        {% else %}
+        <div class="popup">
+          <div class="popup-content">
+            <span class="close">&times;</span>
+            <p class="green">{{ message }}</p>
+          </div>
+        </div>
+      {% endif %} 
+    {% endfor %} 
+{% endif %} 
+{% endwith %}
+
+  <form method="POST">
+    <form method="POST" >
+      <label for="title">Item:</label>
+      <input type="text" id="title" name="title" class="form-control" required>
+      <br>
+      <label for="incoming_stock">Incoming Stock:</label>
+      <input type="number" id="incoming_stock" name="incoming_stock" class="form-control" min="0" required>
+      <br>
+      <label for="outgoing_stock">Outgoing Stock:</label>
+      <input type="number" id="outgoing_stock" name="outgoing_stock" class="form-control" min="0" required>
+      <br>
+      <div class="center">
+        <button type="submit" class="button" >Add Item to the List</button>
+      </div>
+  </form>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Item</th>
+        <th>Incoming Stock</th>
+        <th>Outgoing Stock</th>
+        <th>Total Stock</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for manage in user.manage_re %}
+      <tr>
+        <td>{{ manage.date }}</td>
+        <td>{{ manage.title }}</td>
+        <td>{{ manage.incoming_stock }}</td>
+        <td>{{ manage.outgoing_stock }}</td>
+        <td>{{ manage.total_stock }}</td>
+
+        <td>
+          <form action="{{ url_for('dashboard.edit_manage', manage_id=manage.id) }}" method="GET">
+            <button type="submit">Edit</button>
+          </form>
+        </td>
+        <td>
+          <form action="{{ url_for('dashboard.delete_manage', manage_id=manage.id) }}" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</table>
+
+<script>
+  var popup = document.querySelector('.popup');
+
+var closeButton = document.querySelector('.close');
+        // Open the popup when the page loads
+window.onload = function() {
+      popup.style.display = 'block';
+  };
+
+// Close the popup when the user clicks the close button
+closeButton.onclick = function() {
+  popup.style.display = 'none';
+};
+</script>
+
+ 
+</body>
+</html>

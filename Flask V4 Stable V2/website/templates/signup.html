@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sign Up{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+
+    <script src="../static/Java/loginsignup.js"></script>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %} 
+      {% for category, message in messages %} 
+          {% if category == 'errors' %}
+            <div class="popup">
+              <div class="popup-content">
+                <span class="close">&times;</span>
+                <p class="red">{{ message }}</p>
+              </div>
+            </div>
+            {% else %}
+            <div class="popup">
+              <div class="popup-content">
+                <span class="close">&times;</span>
+                <p class="green">{{ message }}</p>
+              </div>
+            </div>
+          {% endif %} 
+        {% endfor %} 
+    {% endif %} 
+    {% endwith %}
+
+    <div class="container">
+      <form id="signup-form" class="form" method="post">
+        <h2>Sign Up Form</h2>
+        <div class="form-group">
+          <label for="company_name">Company Name:</label>
+          <input type="text" id="company_name" name="company_name" placeholder="Enter your company name" required>
+        </div>
+        <div class="form-group">
+          <label for="Name">Full Name:</label>
+          <input type="text" id="Full_Name" name="Full_Name" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="phone_number">Phone Number:</label>
+          <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password:</label>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+        </div>
+        <div class="button" id="coming">
+          <button type ="submit" class="button" id="signup-button">SignUp</button>
+        </div>
+        <div class="button">
+          <button type="button" class="button" onclick="redirectToIndex()">Home</button>
+      </div>
+      </form>
+    </div>
+
+    <script>
+
+              // Get the popup element
+        var popup = document.querySelector('.popup');
+
+        // Get the close button
+        var closeButton = document.querySelector('.close');
+
+        // Open the popup when the page loads
+        window.onload = function() {
+          popup.style.display = 'block';
+        };
+
+        // Close the popup when the user clicks the close button
+        closeButton.onclick = function() {
+          popup.style.display = 'none';
+        };
+
+    </script>
+  </body>
+</html>

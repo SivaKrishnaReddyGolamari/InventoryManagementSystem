@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Inventory Management System{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="{{ url_for('static', filename='Java/loginsignup.js') }}"></script>
+
+</head>
+<body>
+  <section class ="header">
+    <nav>
+      <a href="#index.html" class="logo"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hidemenu()"></i>
+        <ul>
+          <li><a href="#index.html">Home</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="#PricingMainSection">Pricing</a></li>
+          <li><a href="#about-section">AboutUs</a></li>
+          <li><a href="#contact-section">ContactUs</a></li>
+
+         
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showmenu()"></i>
+    </nav>
+<div class="text-box">
+    <h1>Inventory Management System</h1>
+    <div class="Typing-effect-container"> 
+        <p class="Typing-effect">Contact us</p>
+    </div>
+    <a href="#contact-section" class="text-box-button">Contact us for more info</a>
+</div>
+  </section>  
+
+<!-- Pricing section -->
+
+<section class ="Pricing-MainSection" id = "PricingMainSection">
+
+  <div class="Pricing">
+
+
+    <h1>Various Prices we offer</h1>
+    
+    <div class="p-columns">
+        <ul class="price">
+          <li class="p-header">Basic</li>
+          <li class="price-button">$ 10 / year</li>
+          <li>100 Items</li>
+          <li>Email Support</li>
+          <li class="price-button"><a class="button" onclick="redirectTosignup()">Sign Up</a></li>
+        </ul>
+      </div>
+      
+      <div class="p-columns">
+        <ul class="price">
+          <li class="p-header" >Pro</li>
+          <li class="price-button">$ 25 / year</li>
+          <li>250 Items</li>
+          <li>Phone/Email Support</li>
+          <li class="price-button"><a class="button" onclick="redirectTosignup()">Sign Up</a></li>
+        </ul>
+      </div>
+      
+      <div class="p-columns">
+        <ul class="price">
+          <li class="p-header">Premium</li>
+          <li class="price-button">$ 45 / year</li>
+          <li>500 Items</li>
+          <li>Priority Support</li>
+          <li class="price-button"><a class="button" onclick="redirectTosignup()">Sign Up</a></li>
+        </ul>
+      </div>
+<div class="heading-com">
+      <h1 >Our Product vs Competitors</h1>
+</div>
+<div class="chart-container">
+  <canvas id="product-chart"></canvas>
+</div>
+
+</div>
+
+</section>
+
+<!-- About Us Page -->
+
+<section class="about-section" id = "about-section" >
+  <div class="big" id = "About">
+      <h1 class="about">About Us</h1>
+     <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="../static/img/Siva Krishna Reddy Golamari.jpg" alt="Siva Krishna Reddy Golamari" >
+              <div class="container">
+                <h2>Siva Krishna Reddy G</h2>
+                <br>
+                <p>Designed HTML/CSS pages and conducted various group discussions and Coordinated the team to reach the goal.
+                  and I was able to produce a visually attractive and responsive design that improves the user experience.</p>
+              </div>
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+              <img src="../static/img/Sai Akarsh Gadikota.png" alt="Sai Akarsh Gadikota" >
+              <div class="container">
+                <h2>Sai Akarsh Gadikota</h2>
+                <br>
+                <p>With the aid of my styling and layout expertise, I was able to create a visually appealing and user-friendly design. It was a delightful experience to work on this project, and I eagerly anticipate utilizing my talents to contribute to future tasks.</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="column">
+              <div class="card">
+              <img src="../static/img/Ojeswini Sesi Priya Kalidindi.png" alt="Ojeswini Sesi Priya Kalidindi" >
+                <div class="container">
+                  <h2>Ojeswini Sesi Priya Kalidindi</h2>
+                  <br>
+                  <p>I gained knowledge of key ideas and how the website's components worked. Working on initiatives like these would be a wonderful way for me to develop my skills. I aim to work on more incisive and responsive websites that improve the user experience.</p>
+                </div>
+              </div>
+            </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="../static/img/Sai Srihitha Goverdhana.png" alt="Sai Srihitha Goverdhana" >
+              <div class="container">
+                <h2>Sai Srihitha Goverdhana</h2>
+                <br>
+                <p>I was able to offer insightful advice on how to approach HTML development and provided creative CSS Ideas. I was part of Developing the structure and functionality. I gained knowledge of key ideas and how the website's components worked. The About page was one of my contributions </p>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+  </section>
+
+  <section class = contact id = "contact-section">
+    <div class="contact-section">
+      <h2>Contact Us</h2>
+      <p>Feel free to get in touch with us.</p>
+      <ul>
+        <li><i class="fa fa-map-marker"></i>University of South Florida<br>
+          4202 E Fowler Ave, Tampa, FL 33620</li>
+        <li><i class="fa fa-phone"></i>+1 (813) 974-4281</li>
+        <li><i class="fa fa-envelope"></i><a href="bsn-grad@usf.edu">bsn-grad@usf.edu</a></li>
+      </ul>
+    </div>
+    
+  </section>
+
+
+
+
+<!-- Java Script For Hamburger Menu Bar -->
+
+<script>
+    var navLinks = document.getElementById("navLinks");
+function showmenu() {
+  navLinks.style.right = "0";
+  navLinks.style.display = "block";
+  document.querySelector(".fa-bars").style.display = "none";
+}
+
+function hidemenu(){
+  navLinks.style.right = "calc(100% - 0px)";
+  document.querySelector(".fa-bars").style.display = "block";
+}
+</script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  var data = {
+    labels: ['Basic Plan', 'Pro Plan', 'Premium Plan'],
+    datasets: [
+
+    {
+        label: 'Inventory Management System',
+        data: [10,25,45],
+        backgroundColor: '#FF6384'
+      },
+    {
+        label: 'Competitors',
+        data: [15,29,58],
+        backgroundColor: '#36A2EB'
+      }
+
+    ]
+  };
+
+  var ctx = document.getElementById('product-chart').getContext('2d');
+  var productChart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+</script>
+
+
+</body>
+</html>

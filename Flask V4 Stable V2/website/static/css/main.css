@@ -1,0 +1,435 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.header{
+    min-height: 100vh;
+    width: 100;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.8)), url(../img/Inventory.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.logo {
+  display: inline-block;
+  background-image: url(../img/Logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 35px;
+  border-radius: 15px;
+  
+}
+
+
+
+/*Text fade in */
+
+.text-box h1 {
+    font-size: 200%;
+    animation: fadeInUp 2s ease forwards;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*Typing Effect*/
+
+.Typing-effect-container{
+    display: flex;
+    justify-content: center;
+}
+
+.Typing-effect {
+    width: 9ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+  }
+
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+
+nav{
+    display: flex;
+    padding: 2% 4%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 6px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+
+.text-box{
+
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /*to put the in the centre */
+    transform: translate(-50%,-50%);
+    text-align: center; 
+}
+
+.text-box h1{
+    font-size: 200%;
+}
+
+.text-box p{
+    margin: 10px 0 40px;
+    font-size:14px;
+    color: #fff;
+}
+
+.text-box-button{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer
+}
+
+.text-box-button:hover{
+    border: 1px solid #a8f7f5;
+    background: #839999;
+    transition: 1s;
+}
+
+nav .fa {
+    display: none;
+}
+
+
+
+@media (max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+
+    .nav-links ul li {
+        display: block;
+
+    }
+    .nav-links {
+        position: absolute;
+        display: none;
+        background: rgb(80, 195, 236,0.3);
+        height: 100vh;
+        width: 150px;
+        top: 0;
+        right: 0;
+        text-align: left;
+        z-index: 2;
+        transition: all 0.8s ease; /* Added transition property */
+      }
+
+    nav .fa{
+
+        display: block;
+        color: #fff;
+        cursor: pointer;  
+        margin: 10px;
+        font-size: 22px;
+
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+
+    .nav-links{
+        padding:30px;
+    }
+
+}
+
+
+/* -----Pricing ----*/
+
+
+
+.Pricing {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+
+}
+
+.Pricing h1{
+  color: white;
+}
+
+.Pricing-MainSection{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(255, 255, 255, 0.764));
+  
+}
+
+.heading-com{
+    padding-top: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.p-columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .p-header {
+  background-color: #58acad;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .price-button {
+  background-color: #efeeee;
+  font-size: 20px;
+}
+
+.button {
+  background-color:#58acad;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.price-button a:hover {
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .p-columns {
+    width: 100%;
+  }
+}
+
+
+
+/* About us page */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+.about-section {
+  padding: 50px 0;
+  background: linear-gradient(rgba(230, 201, 201, 0.8), rgba(76, 218, 228, 0.764));
+
+}
+
+.big {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about {
+  padding-top: 5%;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.column {
+  flex-basis: calc(25% - 16px);
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.card:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.9)
+}
+
+
+
+/* About Mobile tab*/
+@media screen and (max-width: 992px) {
+  .column {
+    flex-basis: calc(33.33% - 16px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    flex-basis: calc(50% - 16px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .column {
+    flex-basis: 100%;
+  }
+}
+
+/* Contact us  section */
+.contact-section {
+  margin: 50px auto;
+  max-width: 600px;
+  text-align: center;
+  background: linear-gradient(to bottom, #63b5db, #3ffbcf);
+  padding: 50px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 4px 8px 0 rgba(210, 12, 12, 0.2);
+}
+
+.contact-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.contact-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-section li {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.contact-section i {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+
+.contact {
+  background: linear-gradient(to bottom,  rgba(76, 218, 228, 0.764), #ebebeb);
+  padding: 50px;
+}
+
+.contact-section:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
+
